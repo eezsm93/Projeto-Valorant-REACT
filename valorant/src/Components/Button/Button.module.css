@@ -1,0 +1,23 @@
+.button{
+    font-size: 1rem;
+    font-family: Poppins;
+    cursor: pointer;
+    border: none;
+    border-radius: 0.4rem;
+    background: #E13157;
+    color: white;
+    min-width: 8rem;
+    padding: 0.8rem 1.2rem;
+    box-sizing: border-box;
+    transition: .1s;
+}
+.button:hover,
+.button:focus{
+    outline: none;
+    box-shadow: 0 0 5px white, 0 0 0 4px #E13157;
+}
+
+.button:disabled{
+    opacity: 0.5;
+    cursor: await;
+}
