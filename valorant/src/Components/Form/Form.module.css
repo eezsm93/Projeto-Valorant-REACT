@@ -1,0 +1,19 @@
+.formContainer{
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    justify-content: center;
+    align-items: center;
+    max-width: 75rem;
+    height: 40rem;
+    border-radius: 1rem;
+    background-color: #ccc;
+}
+
+.form{
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-self: center;
+    max-width: 40rem;
+}

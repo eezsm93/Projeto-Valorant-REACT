@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { Children } from 'react'
+import styles from './Input.module.css'
 
-const Input = () => {
+const Input = ({type, id, children, name}) => {
   return (
-    <div>Input</div>
+    <input className={styles.input}   
+       type={type}
+       id={id}
+       name={name}
+       placeholder={name}
+    />
+   
   )
 }
 
