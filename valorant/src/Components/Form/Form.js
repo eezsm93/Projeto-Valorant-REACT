@@ -10,9 +10,11 @@ const Form = () => {
         <div className={styles.formContainer}>
             <form className={styles.form}>
                 <Input type="text" id="name" name="Nome"/>
+                <Input type="text" id="lastName" name="Sobrenome"/>
                 <Input type="email" id="email" name="Email"/>
-                <Input type="password" id="password" name="Senha"/>
-                <Input type="text" id="problem" name="problema"/>
+                <Input type="password" id="nickName" name="Apelido do Jogador"/>
+                <Input type="text" id="subject" name="Assunto"/>
+                <Input type="text" id="description" name="Descricao"/>
                 <Button>Enviar</Button>
             </form>
             <div>

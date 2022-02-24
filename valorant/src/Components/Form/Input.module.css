@@ -1,3 +1,11 @@
 .input{
+    border: 1px solid #133052;
+    border-radius: 5px;
+    width: 100%;
+    padding: 15px 30px
+}
+.input::placeholder{
+    color: #133052;
+    font-family: 'Poppins';
 
 }

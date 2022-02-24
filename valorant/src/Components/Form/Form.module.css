@@ -8,6 +8,7 @@
     height: 40rem;
     border-radius: 1rem;
     background-color: #ccc;
+    margin-bottom: 5rem;
 }
 
 .form{
@@ -16,4 +17,9 @@
     grid-template-columns: 1fr 1fr;
     align-self: center;
     max-width: 40rem;
+}
+
+.form Input{
+    margin: 15px
+
 }
