@@ -27,7 +27,7 @@ import { Link } from 'react-router-dom'
               "damage": 30
             }
           ],
-          "image": "../../Assets/agents/jett.png"
+          "image": "jett.png"
         },
         {
           "name": "Raze",
@@ -51,7 +51,7 @@ import { Link } from 'react-router-dom'
               "damage": 25
             }
           ],
-          "image": "../../Assets/agents/raze.png"
+          "image": "raze.png"
         },
         {
           "name": "Breach",
@@ -75,7 +75,7 @@ import { Link } from 'react-router-dom'
               "damage": 10
             }
           ],
-          "image": "../../Assets/agents/breach.png"
+          "image": "breach.png"
         },
         {
           "name": "Omen",
@@ -99,7 +99,7 @@ import { Link } from 'react-router-dom'
               "damage": 20
             }
           ],
-          "image": "../../Assets/agents/omen.png"
+          "image": "omen.png"
         },
         {
           "name": "Brimstone",
@@ -123,7 +123,7 @@ import { Link } from 'react-router-dom'
               "damage": 20
             }
           ],
-          "image": "../../Assets/agents/brimstone.png"
+          "image": "brimstone.png"
         },
         {
           "name": "Phoenix",
@@ -147,7 +147,7 @@ import { Link } from 'react-router-dom'
               "damage": 30
             }
           ],
-          "image": "../../Assets/agents/phoenix.png"
+          "image": "phoenix.png"
         },
         {
           "name": "Sage",
@@ -171,7 +171,7 @@ import { Link } from 'react-router-dom'
               "damage": 25
             }
           ],
-          "image": "../../Assets/agents/sage.png"
+          "image": "sage.png"
         },
         {
           "name": "Sova",
@@ -195,7 +195,7 @@ import { Link } from 'react-router-dom'
               "damage": 40
             }
           ],
-          "image": "../../Assets/agents/sova.png"
+          "image": "sova.png"
         },
         {
           "name": "Viper",
@@ -219,7 +219,7 @@ import { Link } from 'react-router-dom'
               "damage": 15
             }
           ],
-          "image": "../../Assets/agents/viper.png"
+          "image": "viper.png"
         },
         {
           "name": "Cypher",
@@ -243,7 +243,7 @@ import { Link } from 'react-router-dom'
               "damage": 20
             }
           ],
-          "image": "../../Assets/agents/cypher.png"
+          "image": "cypher.png"
         },
         {
           "name": "Reyna",
@@ -267,18 +267,18 @@ import { Link } from 'react-router-dom'
               "damage": 45
             }
           ],
-          "image": "../../Assets/agents/reyna.png"
+          "image": "reyna.png"
         }
         
       ],
       
       "guns": {
         "primaryGun": [
-          "./guns/gun6.png",
-          "./guns/gun7.png",
-          "./guns/gun8.png",
-          "./guns/gun11.png",
-          "./guns/gun12.png"
+          "gun6.png",
+          "gun7.png",
+          "gun8.png",
+          "gun11.png",
+          "gun12.png"
         ],
         "secondaryGun": [
           "./guns/gun14.png",
@@ -310,7 +310,10 @@ import { Link } from 'react-router-dom'
 
 var myData = JSON.parse(myJson);
 var data = myData.data
-console.log(data.agents);
+
+
+
+ 
 
 const AgentsList = () => {
   return(
@@ -321,11 +324,12 @@ const AgentsList = () => {
     {data.agents.map((agent,index) => (
       <>
         <div key={index} className={`${styles.agentCard} `}>
+          <img src={require(`../../Assets/agents/${agent.image}`)}/>
           <p>{agent.name.toUpperCase()}</p>
         </div>
       </>
     ))}
-    <Link to="/agents"><div className={`${styles.agentCard} `}>
+    <Link to="/agents"><div className={`${styles.agentCard}`}>
      <p>Ver Todos</p>
     </div></Link>
   </div> 

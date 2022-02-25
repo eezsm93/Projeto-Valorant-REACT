@@ -17,7 +17,6 @@
     margin: 1rem 1rem;
     border: 2px solid #133052;
     text-align: center;
-    background-image: url(https://i.pinimg.com/originals/a9/94/d9/a994d91c5d89aca55b8231879dd7c9d0.png);
     background-size: 100%;
     z-index: 1;
     cursor: pointer;
@@ -28,10 +27,6 @@
     color: white;
     font-family: 'Poppins' ;
     font-weight: bold;
-    font-size: 2.5rem;
-    position: relative;
-    bottom: -20rem;
-    display: flex;
-    flex-direction: column;   
+    font-size: 2.5rem;  
     
 }
