@@ -1,19 +1,35 @@
 import React from 'react'
 import Img from '../../Assets/images/V_AGENTS_587x900_Cypher.png'
 import styles from './Guns.module.css'
+import Data, { guns, agents, maps } from '../Data/Index'
+import {ReactComponent as ArrowLeft} from '../../Assets/images/arrowLeft.svg'
+import {ReactComponent as ArrowRight} from '../../Assets/images/arrowRight.svg'
+import {ReactComponent as Target} from '../../Assets/images/target.svg'
+
+
+
+
 
 const Guns = () => {
   return (
-    <section className="containerHome">
+    <section className={styles.background}>
         <div className={styles.gunsContainer}>
-            <div>
-                <h1>Escolha sua Arma</h1>
+            <div className={styles.guns}>
+                <div className={styles.tittleContainer}>
+                  <h1>Escolha sua Arma</h1><Target/>
+                </div>
                 <p>Arma Primaria</p>
-                {/* <PrimaryGuns/> */}
+                  <div className={styles.primaryGunsContainer}>
+                    <ArrowLeft/><span>Foto da arma</span><ArrowRight/>
+                  </div>
                 <p>Arma Secundaria</p>
-                {/* <SecondaryGuns/> */}
+                  <div className={styles.secondaryGunsContainer}>
+                    <ArrowLeft/><span>Foto da arma</span><ArrowRight/>
+                  </div>
                 <p>Arma Branca</p>
-                {/* <SteelGuns/> */}
+                <div className={styles.steelGunsContainer}>
+                    <ArrowLeft/><span>Foto da arma</span><ArrowRight/>
+                </div>
             </div>
             <div>
                 <img src={Img}/>

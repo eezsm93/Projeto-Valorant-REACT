@@ -1,3 +1,8 @@
+.background{
+    background-image: url(../../Assets/images/Background.png)
+}
+
+
 .gunsContainer{
     max-width: 75rem;
     margin: 0 auto;
@@ -5,4 +10,62 @@
     grid-template-columns: 1fr 1fr;
     justify-content: center;
     align-items: center;
+    border: 2px solid #133052;
+}
+
+
+.tittleContainer{
+    display: flex;
+    align-items: center;
+}
+.tittleContainer h1{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: white;
+    font-family: 'Poppins';
+    font-style: italic;
+
+}
+
+
+.guns{
+    border: 1px solid red;
+    min-height: 100%
+
+}
+
+.guns p{
+    color: white;
+}
+
+.primaryGunsContainer{
+    display: flex;
+    align-items: center;
+}
+
+.primaryGunsContainer span{
+    height: 195px;
+    width: 325px;
+    border: 2px solid red;
+}
+
+.secondaryGunsContainer{
+    display: flex;
+    align-items: center;
+}
+
+.secondaryGunsContainer span{
+    height: 195px;
+    width: 325px;
+    border: 2px solid red;
+}
+.steelGunsContainer{
+    display: flex;
+    align-items: center;
+}
+
+.steelGunsContainer span{
+    height: 195px;
+    width: 325px;
+    border: 2px solid red;
 }

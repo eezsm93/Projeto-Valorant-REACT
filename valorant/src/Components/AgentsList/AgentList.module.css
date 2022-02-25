@@ -20,13 +20,34 @@
     background-size: 100%;
     z-index: 1;
     cursor: pointer;
-   
 }
+
+
+
+.agentCardSeeAll{
+    display: block;
+    width: 300px;
+    height: 400px;
+    border: 2px solid #133052;
+    margin: 1rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #E13157;
+    font-family: 'Poppins' ;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.agentCardSeeAll svg{
+    margin: 0 .5rem;
+}
+
 
 .agentCard p{
     color: white;
     font-family: 'Poppins' ;
-    font-weight: bold;
-    font-size: 2.5rem;  
+    font-weight: 700;
+    font-size: 1.5rem; 
     
 }
