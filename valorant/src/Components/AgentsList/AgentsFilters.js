@@ -2,9 +2,6 @@ import React from 'react'
 import styles from './AgentsFilters.module.css'
 
 
-
-
-
 const AgentsFilters = ({filterByName, filterBySkills}) => {
 
 

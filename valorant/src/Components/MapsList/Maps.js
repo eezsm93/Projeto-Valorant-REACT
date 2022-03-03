@@ -11,10 +11,8 @@ const Maps = () => {
   return (
     <div className={styles.mapsContainer}>
         <div className={styles.maps}>
-        {mapsList.map((map,index)=>(
-            <>  
-                <img src={require(`../../Assets/maps/${map}`)}/>
-            </>
+        {mapsList.map((map,index)=>( 
+                <img key={index} src={require(`../../Assets/maps/${map}`)}/>
         ))}
             
         </div>
