@@ -1,16 +1,14 @@
 import React from 'react'
 import AgentsList from '../../Components/AgentsList/AgentsList'
 import Header from '../../Components/Header/Header'
+import styles from './Agents.module.css'
+
 
 const Agents = () => {
   return (
-    <div>
+    <div className={styles.agentsPageBg}>
       <Header/>
       <AgentsList/>
-      MENSAGEM TESTE AGENTEeeeeeee
-      MENSAGEM TESTE AGENTEeeeeeee
-      MENSAGEM TESTE AGENTEeeeeeee
-
     </div>
   )
 }

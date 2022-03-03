@@ -1,6 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,700;1,400&family=Spectral:wght@700&display=swap');
 
+.header{
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    z-index: 100;
+    background: black;
+    background-image: url(../../Assets/images/valorant-ep1-ato3-publi.png);
+    height: 45rem;
+    padding-top: 1.5rem;
 
+    
+}
 
 .nav{
     justify-content: space-between;

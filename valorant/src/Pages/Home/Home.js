@@ -5,17 +5,23 @@ import Header from '../../Components/Header/Header'
 import Download from '../../Components/Download/Download'
 import Guns from '../../Components/GunsList/Guns'
 import Form from '../../Components/Form/Form'
+import styles from './Home.module.css'
 
 const Home = () => {
   return (
     <>
-      <Header />
-      <AgentsList/>
-      {/* <Maps/> */}
-      <Guns/>
-      <Download/>
-      <Form/>
-      <Footer />
+      <div className={styles.headerBackgroundHome}>
+        <Header />
+      </div>
+      <div className={styles.agentBackgroundHome}>
+        <AgentsList />
+      </div>
+      <div className={styles.BackgroundHome}>
+        {/* <Maps/> */}
+        <Guns/>
+        <Download/>
+        <Form/>
+      </div>
     </>
   )
 }

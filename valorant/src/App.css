@@ -78,13 +78,7 @@ a{
     padding: 20px;
 }
 
-.containerHome{
-    display: block;
-    background-color: white;
-    opacity: 1;
-    max-width: 100%;
-    
-}
+
 
 @keyframes animeLeft{
     to{

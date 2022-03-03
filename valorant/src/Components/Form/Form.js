@@ -4,7 +4,7 @@ import Input from './Input'
 import Img from '../../Assets/images/valorant-collectible-variable-removed-spray.png'
 import styles from './Form.module.css'
 
-const Form = () => {
+const Form = ({onChange}) => {
   return (
     <section>
         <div className={styles.formContainer}>
