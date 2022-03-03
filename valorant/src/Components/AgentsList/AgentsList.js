@@ -40,7 +40,7 @@ import Input from '../Form/Input'
       <Link to="/agents"><div className={`${styles.agentCardSeeAll}`}>
       <VerTodos/><p>ver todos</p>
       </div></Link>
-      {agentModal && (<Modal closeModal={() => setAgentModal(null)} selectedAgent={agentModal}/>)}{console.log(agentModal)}
+      {agentModal && (<Modal allAgents={agents} closeModal={() => setAgentModal(null)} selectedAgent={agentModal}/>)}
       <Input onChange={filterAgentsByName}/>
     </div> 
     </>

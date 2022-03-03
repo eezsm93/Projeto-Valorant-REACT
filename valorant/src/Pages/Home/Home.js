@@ -6,6 +6,7 @@ import Download from '../../Components/Download/Download'
 import Guns from '../../Components/GunsList/Guns'
 import Form from '../../Components/Form/Form'
 import styles from './Home.module.css'
+import Maps from '../../Components/MapsList/Maps'
 
 const Home = () => {
   return (
@@ -17,7 +18,7 @@ const Home = () => {
         <AgentsList />
       </div>
       <div className={styles.BackgroundHome}>
-        {/* <Maps/> */}
+        <Maps/>
         <Guns/>
         <Download/>
         <Form/>

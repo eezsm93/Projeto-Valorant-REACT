@@ -1,7 +1,18 @@
 import React from 'react'
 import styles from './ModalAgents.module.css'
 
-const Modal = ({closeModal, selectedAgent}) => {
+const Modal = ({closeModal, selectedAgent, allAgents}) => {
+
+    const removeItem = (e) => {
+            let i = allAgents.length - 1;
+            selectedAgent.splice(i, 1);
+
+            console.log(i);
+      };
+
+      
+
+
   return (
     <div className={`${styles.modalBack}`}>  
         <div className={`${styles.modalContainer}`}>
@@ -15,6 +26,8 @@ const Modal = ({closeModal, selectedAgent}) => {
                     <p>Arma Primaria: {selectedAgent.skills[1].damage} Dano</p>
                     <p>Arma Secundaria:  {selectedAgent.skills[2].damage} Dano</p>
                     <p>Especial: {selectedAgent.skills[3].damage} Dano</p>
+                    <button onClick={closeModal}>Fechar</button>
+                    <button onClick={removeItem}>Deletar</button>
                 </div>
                 <span className={`${styles.modalXClose}`} onClick={closeModal}>X</span>
             </div>

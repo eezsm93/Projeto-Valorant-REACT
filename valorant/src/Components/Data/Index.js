@@ -296,11 +296,11 @@ var myJson = `{
         ]
       },
       "maps": [
-        "./maps/map1.png",
-        "./maps/map2.png",
-        "./maps/map3.png",
-        "./maps/map4.png",
-        "./maps/map5.png"
+        "map1.png",
+        "map2.png",
+        "map3.png",
+        "map4.png",
+        "map5.png"
       ]
     }
   }`;
