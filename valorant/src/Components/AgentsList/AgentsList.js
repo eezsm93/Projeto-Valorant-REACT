@@ -5,6 +5,7 @@ import Data, { agents } from '../Data/Index'
 import {ReactComponent as VerTodos} from '../../Assets/images/caminho243.svg'
 import Modal from '../ModalAgents/Modal'
 import Input from '../Form/Input'
+import AgentsFilters from './AgentsFilters'
 
 
 
@@ -24,10 +25,18 @@ import Input from '../Form/Input'
       }
     }
 
+    function filterAgentsBySkills(event){
+      event.preventDefault();
+
+      
+
+    }
+
 
     return(
     <>
     <h1>AGENTES</h1>
+    <AgentsFilters filterByName={filterAgentsByName} filterBySkills={filterAgentsBySkills}/>
     <div className={styles.container}> 
       {agentsList.map((agent,index) => (
         <>
@@ -41,7 +50,6 @@ import Input from '../Form/Input'
       <VerTodos/><p>ver todos</p>
       </div></Link>
       {agentModal && (<Modal allAgents={agents} closeModal={() => setAgentModal(null)} selectedAgent={agentModal}/>)}
-      <Input onChange={filterAgentsByName}/>
     </div> 
     </>
     )

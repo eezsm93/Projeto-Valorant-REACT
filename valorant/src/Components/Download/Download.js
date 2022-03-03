@@ -5,18 +5,22 @@ import styles from './Download.module.css'
 
 const Download = () => {
   return (
-    <section className="containerHome">
+    <section>
         <div className={styles.containerDownload}>
+          <div className={styles.downloadLeft}>
             <div>
                 <h1>Baixe o Jogo</h1>
                 <p>Jogue com os seus amigos</p>
                 <p>Compre itens digitais</p>
-                <p>Torneios independentes</p>
-                <Button>Download</Button>
+                <p>Torneios independentes</p> 
             </div>
-            <div>
-                <img src={Img}/>
+            <div className={styles.downloadButton}>
+                  <Button>Download</Button>
             </div>
+          </div>
+          <div>
+            <img src={Img}/>
+          </div>
         </div>
     </section>
   )

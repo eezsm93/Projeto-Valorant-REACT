@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,700;1,400&family=Spectral:wght@700&display=swap');
+
 .containerDownload{
     max-width: 75rem;
     margin: 0 auto;
@@ -7,4 +10,32 @@
     align-items: center;
     padding-top: 5rem;
     padding-bottom: 5rem;
+}
+
+
+.downloadLeft{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.downloadLeft h1{
+    font-family: 'Poppins';
+    font-size: 3rem;
+    font-style: italic;
+    color: white;
+    text-transform: uppercase;
+
+}
+
+.downloadLeft p{
+    font-family: 'Poppins';
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: white;
+    margin-top: 1.5rem;
+}
+
+.downloadButton{
+    margin-top: 3rem;
 }
