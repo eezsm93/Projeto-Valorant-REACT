@@ -1,13 +1,7 @@
 import React from 'react'
 import styles from './ModalAgents.module.css'
 
-const Modal = ({closeModal, selectedAgent, allAgents, selectedAgentIndex}) => {
-
-    function removeAgent(){
-        let i = selectedAgentIndex
-        allAgents.splice(i,1)
-        console.log(i)
-    }
+const Modal = ({closeModal, selectedAgent, allAgents, removeAgent}) => {
 
         
   return (

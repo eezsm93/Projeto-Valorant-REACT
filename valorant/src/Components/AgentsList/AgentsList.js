@@ -16,8 +16,8 @@ import { useLocation } from "react-router-dom"
     const [agentModal, setAgentModal] = React.useState(null);
     const [agentIndex, setAgentIndex] = React.useState(null);
 
-    let sampleLocation = useLocation();
-    sampleLocation = sampleLocation.pathname
+    let location = useLocation();
+    location = location.pathname
 
     function filterAgentsByName(event){
       var searchedName = event.target.value;
@@ -30,14 +30,14 @@ import { useLocation } from "react-router-dom"
       }
     }
 
+    function removeAgent(){
+      let i = agentIndex
+      agents.splice(i,1)
+  }
 
 
 
 
-    function filterAgentsBySkills(event){
-      event.preventDefault();
-
-    }
 
 
     return(
@@ -45,7 +45,7 @@ import { useLocation } from "react-router-dom"
       <div className={styles.tittle}>
         <h1>AGENTES</h1>
       </div>
-      {sampleLocation === '/agents' && <AgentsFilters filterByName={filterAgentsByName} filterBySkills={filterAgentsBySkills}/>}
+      {location === '/agents' && <AgentsFilters filterByName={filterAgentsByName}/>}
       <div className={styles.container}> 
         {agentsList.map((agent,index) => (
             <div onClick={() => { setAgentModal(agent); setAgentIndex(index)}} key={index} className={`${styles.agentCard} `}>
@@ -56,7 +56,7 @@ import { useLocation } from "react-router-dom"
         <Link to="/agents"><div className={`${styles.agentCardSeeAll}`}>
         <VerTodos/><p>ver todos</p>
         </div></Link>
-        {agentModal && (<Modal allAgents={agents} closeModal={() => setAgentModal(null)} selectedAgent={agentModal} selectedAgentIndex={agentIndex}/>)}
+        {agentModal && (<Modal allAgents={agents} closeModal={() => setAgentModal(null)} selectedAgent={agentModal} removeAgent={removeAgent}/>)}
       </div> 
     </>
     )

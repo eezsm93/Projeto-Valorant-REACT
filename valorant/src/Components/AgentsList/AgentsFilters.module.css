@@ -2,6 +2,8 @@
     margin: 0 auto;
     border: 1px solid red;
     max-width: 80rem;
+    z-index: 9;
+    position: relative;
 }
 
 .filters{

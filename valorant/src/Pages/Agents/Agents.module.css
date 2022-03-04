@@ -1,6 +1,27 @@
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #0D161F;
+}
+
 .agentsPageBg{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding-top: 1.5rem;
+}
+
+.agentsPageBg::before{
+    content: " ";
+    background-color: #0D161F;
     background-image: url(../../Assets/images/valorant-ep1-ato3-publi.png);
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-top: 1.5rem;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.05;
+   
 }
