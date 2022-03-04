@@ -12,13 +12,18 @@ import { useLocation } from "react-router-dom"
 
   const AgentsList = () => {
 
-    const [agentsList, setAgentsList] = React.useState(agents);
-    const [agentModal, setAgentModal] = React.useState(null);
-    const [agentIndex, setAgentIndex] = React.useState(null);
 
     let location = useLocation();
     location = location.pathname
 
+    const [agentsList, setAgentsList] = React.useState(agents);
+    const [agentModal, setAgentModal] = React.useState(null);
+    const [agentIndex, setAgentIndex] = React.useState(null);
+    const [skillType, setSkillType] = React.useState(null);
+    const [aboveUnderFilter, setAboveUnderFilter] = React.useState(null);
+    const [dmgValueFilter, setDmgValueFilter] = React.useState(null)
+
+ 
     function filterAgentsByName(event){
       var searchedName = event.target.value;
       if(searchedName.length > 0){
@@ -29,6 +34,62 @@ import { useLocation } from "react-router-dom"
         return setAgentsList(agents);
       }
     }
+
+    const takeSkillValue = (e) => setSkillType(e.target.value)
+    const takeAboveUnderValue = (e) => setAboveUnderFilter(e.target.value)
+    const takeDmgValue = (e) => setDmgValueFilter(Number(e.target.value))
+
+    function filterAgentsBySkill(){
+
+       let typeIndex = null;
+       let aboveOrUnder = null;
+
+       switch (skillType) {
+        case "primary":
+          typeIndex = 0;
+          break;
+        case "secondary":
+          typeIndex = 1;
+          break;
+        case "melee":
+          typeIndex = 2;
+          break;
+        case "special":
+          typeIndex = 3;
+          break;
+        default:
+          alert("Especifique uma habilidade para ser filtrada.");
+          return;
+          break;
+      }
+      switch (aboveUnderFilter) {
+        case "above":
+          aboveOrUnder = true;
+          break;
+        case "under":
+          aboveOrUnder = false;
+          break;
+        default:
+          alert("especifique o corte de filtro.");
+          return;
+          break;
+      }
+
+      console.log(typeIndex);
+      console.log(aboveOrUnder);
+
+      let filteredAgents = agents.filter(function (agent) {
+        console.log(agent.skills[typeIndex].damage);
+        if (aboveOrUnder) {
+          return agent.skills[typeIndex].damage > dmgValueFilter;
+        } else {
+          return agent.skills[typeIndex].damage < dmgValueFilter;
+        }
+      });
+      setAgentsList(filteredAgents);
+    }
+
+
 
     function removeAgent(){
       let i = agentIndex
@@ -45,7 +106,7 @@ import { useLocation } from "react-router-dom"
       <div className={styles.tittle}>
         <h1>AGENTES</h1>
       </div>
-      {location === '/agents' && <AgentsFilters filterByName={filterAgentsByName}/>}
+      {location === '/agents' && <AgentsFilters filterByName={filterAgentsByName} onChangeSkillValue={takeSkillValue} onChangeAboveUnderValue={takeAboveUnderValue} onChangeDmgValue={takeDmgValue} onSubimitFilters={filterAgentsBySkill}/>}
       <div className={styles.container}> 
         {agentsList.map((agent,index) => (
             <div onClick={() => { setAgentModal(agent); setAgentIndex(index)}} key={index} className={`${styles.agentCard} `}>
@@ -56,7 +117,7 @@ import { useLocation } from "react-router-dom"
         <Link to="/agents"><div className={`${styles.agentCardSeeAll}`}>
         <VerTodos/><p>ver todos</p>
         </div></Link>
-        {agentModal && (<Modal allAgents={agents} closeModal={() => setAgentModal(null)} selectedAgent={agentModal} removeAgent={removeAgent}/>)}
+        {agentModal && (<Modal closeModal={() => setAgentModal(null)} selectedAgent={agentModal} removeAgent={removeAgent}/>)}
       </div> 
     </>
     )

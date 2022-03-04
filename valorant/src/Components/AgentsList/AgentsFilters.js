@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './AgentsFilters.module.css'
 
 
-const AgentsFilters = ({filterByName, filterBySkills}) => {
+const AgentsFilters = ({filterByName, onChangeSkillValue, onChangeAboveUnderValue, onChangeDmgValue, onSubimitFilters}) => {
 
 
   return (
@@ -11,20 +11,20 @@ const AgentsFilters = ({filterByName, filterBySkills}) => {
             <input onChange={filterByName} placeholder='Pesquisar agentes'/>
         </div>
         <div className={styles.filters}>
-                <select>
-                    <option>Selecione uma Habilidade</option>
-                    <option>Arma Branca</option>
-                    <option>Arma Primaria</option>
-                    <option>Arma Secundaria</option>
-                    <option>Especial</option>
+                <select onChange={onChangeSkillValue}>
+                    <option selected disabled>Selecione uma Habilidade</option>
+                    <option value="primary">Arma Branca</option>
+                    <option value="secondary">Arma Primaria</option>
+                    <option value="melee">Arma Secundaria</option>
+                    <option value="special">Especial</option>
                 </select>
-                <select>
-                    <option>Selecione um filtro</option>
-                    <option>Maior que</option>
-                    <option>Menor que</option>
+                <select onChange={onChangeAboveUnderValue}>
+                    <option selected disabled >Selecione um filtro</option>
+                    <option value="above">Maior que</option>
+                    <option value="under">Menor que</option>
                 </select>
-                <input placeholder="informe o valor do dano"/>
-                <button>Filtrar</button>
+                <input onChange={onChangeDmgValue}placeholder="informe o valor do dano"/>
+                <button onClick={onSubimitFilters}>Filtrar</button>
         </div>
     </div>
   )

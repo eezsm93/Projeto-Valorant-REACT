@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './ModalAgents.module.css'
 
-const Modal = ({closeModal, selectedAgent, allAgents, removeAgent}) => {
+const Modal = ({closeModal, selectedAgent, removeAgent}) => {
 
         
   return (

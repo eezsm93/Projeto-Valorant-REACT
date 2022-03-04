@@ -1,3 +1,8 @@
+img{
+    display: block;
+    max-width: 100%;
+}
+
 .container{
     max-width: 100%;
     display: flex;
@@ -31,12 +36,20 @@
     top: 0px;
     bottom: 0px;
     border: 2px solid #E13157;
-    transform: scale(1.05);
-    transition: 0.5s all
+
 }
 
+
+
 .agentImg{
-    zoom: 1.1;
+    display: block;
+    max-width: 100%;
+    transform: scale(0.97);
+
+}
+.agentImg:hover{
+    transform: scale(1);
+    transition: 0.3s all
 }
 
 
@@ -54,10 +67,12 @@
     font-family: 'Poppins' ;
     font-weight: 700;
     font-size: 1.5rem;
+    position: relative;
 }
 
 .agentCardSeeAll svg{
     margin: 0 .5rem;
+    z-index: 999;
 }
 
 
