@@ -52,18 +52,26 @@
 }
 
 .tittle{
+    
     margin: 0 auto;
     max-width: 80rem;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    z-index: 1000;
+  
+    
    
 }
 
 .tittle h1{
+   
     color: white;
     font-size: 2.5rem;
     font-family: 'Poppins';
     font-style: italic;
     text-transform: uppercase;
     font-weight: 400;
-    padding-top: 5rem;
     padding-bottom: 5rem;
 }

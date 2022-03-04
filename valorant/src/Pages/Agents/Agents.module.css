@@ -1,6 +1,6 @@
 body{
     font-family: 'Poppins', sans-serif;
-    background-color: #0D161F;
+   
 }
 
 .agentsPageBg{
@@ -8,6 +8,7 @@ body{
     height: 100%;
     position: relative;
     padding-top: 1.5rem;
+    
 }
 
 .agentsPageBg::before{
@@ -23,5 +24,4 @@ body{
     bottom: 0px;
     left: 0px;
     opacity: 0.05;
-   
 }
