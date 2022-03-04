@@ -49,7 +49,7 @@ import { useLocation } from "react-router-dom"
       <div className={styles.container}> 
         {agentsList.map((agent,index) => (
             <div onClick={() => { setAgentModal(agent); setAgentIndex(index)}} key={index} className={`${styles.agentCard} `}>
-              <img src={require(`../../Assets/agents/${agent.image}`)}/>
+              <img className={styles.agentImg} src={require(`../../Assets/agents/${agent.image}`)}/>
               <p>{agent.name.toUpperCase()}</p>
             </div>
         ))} 

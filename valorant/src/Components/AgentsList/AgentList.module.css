@@ -19,6 +19,24 @@
     background-size: 100%;
     z-index: 1;
     cursor: pointer;
+    background: linear-gradient(0deg, rgba(0,0,0,0.7122199221485469) 0%, rgba(124,123,123,0.051155496378238796) 49%, rgba(242,241,241,0) 100%);
+}
+
+.agentCard:hover{
+    z-index: 0;
+    background: linear-gradient(0deg, rgba(225,49,87,1) 0%, rgba(235,121,145,0.342472022988883) 21%, rgba(246,208,216,0.1856092778908438) 100%);
+    content: '';
+    right: 0px;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    border: 2px solid #E13157;
+    transform: scale(1.05);
+    transition: 0.5s all
+}
+
+.agentImg{
+    zoom: 1.1;
 }
 
 
