@@ -7,6 +7,7 @@ import Modal from '../ModalAgents/Modal'
 import Input from '../Form/Input'
 import AgentsFilters from './AgentsFilters'
 import { useLocation } from "react-router-dom"
+import NewAgentModal from '../ModalAgents/NewAgentModal'
 
 
 
@@ -17,11 +18,20 @@ import { useLocation } from "react-router-dom"
     location = location.pathname
 
     const [agentsList, setAgentsList] = React.useState(agents);
+
     const [agentModal, setAgentModal] = React.useState(null);
+    
     const [agentIndex, setAgentIndex] = React.useState(null);
     const [skillType, setSkillType] = React.useState(null);
     const [aboveUnderFilter, setAboveUnderFilter] = React.useState(null);
     const [dmgValueFilter, setDmgValueFilter] = React.useState(null)
+
+    const[newAgentModal, setNewAgentModal] = React.useState(false);
+    const[newAgentDescription, setNewAgentDescription] = React.useState(null);
+
+
+
+
 
  
     function filterAgentsByName(event){
@@ -75,9 +85,6 @@ import { useLocation } from "react-router-dom"
           break;
       }
 
-      console.log(typeIndex);
-      console.log(aboveOrUnder);
-
       let filteredAgents = agents.filter(function (agent) {
         console.log(agent.skills[typeIndex].damage);
         if (aboveOrUnder) {
@@ -87,6 +94,13 @@ import { useLocation } from "react-router-dom"
         }
       });
       setAgentsList(filteredAgents);
+    }
+
+
+    
+
+    function addNewAgent(){
+
     }
 
 
@@ -108,16 +122,20 @@ import { useLocation } from "react-router-dom"
       </div>
       {location === '/agents' && <AgentsFilters filterByName={filterAgentsByName} onChangeSkillValue={takeSkillValue} onChangeAboveUnderValue={takeAboveUnderValue} onChangeDmgValue={takeDmgValue} onSubimitFilters={filterAgentsBySkill}/>}
       <div className={styles.container}> 
+      {location === '/agents' && <div className={styles.addNewAgentCard} onClick={() => setNewAgentModal(true)}>
+          <p>Adicionar</p>
+        </div>}
         {agentsList.map((agent,index) => (
             <div onClick={() => { setAgentModal(agent); setAgentIndex(index)}} key={index} className={`${styles.agentCard} `}>
               <img className={styles.agentImg} src={require(`../../Assets/agents/${agent.image}`)}/>
               <p>{agent.name.toUpperCase()}</p>
             </div>
         ))} 
-        <Link to="/agents"><div className={`${styles.agentCardSeeAll}`}>
+        {location === '/' && <Link to="/agents"><div className={`${styles.agentCardSeeAll}`}>
         <VerTodos/><p>ver todos</p>
-        </div></Link>
+        </div></Link>}
         {agentModal && (<Modal closeModal={() => setAgentModal(null)} selectedAgent={agentModal} removeAgent={removeAgent}/>)}
+        {location === '/agents' && newAgentModal && <NewAgentModal closeModalNewAgent={() => setNewAgentModal(false)}/>}
       </div> 
     </>
     )

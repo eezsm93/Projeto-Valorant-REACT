@@ -75,6 +75,30 @@ img{
     z-index: 999;
 }
 
+.addNewAgentCard{
+    display: block;
+    width: 300px;
+    height: 400px;
+    border: 2px solid #133052;
+    margin: 1rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #E13157;
+    font-family: 'Poppins' ;
+    font-weight: 700;
+    font-size: 1.5rem;
+    position: relative;
+    cursor: pointer;
+
+}
+
+.addNewAgentCard svg{
+    margin: 0 .5rem;
+    z-index: 1;
+    
+}
+
 
 .agentCard p{
     color: white;
