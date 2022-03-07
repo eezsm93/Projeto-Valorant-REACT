@@ -1,12 +1,19 @@
-import React, { useState } from 'react'
+
 import styles from './NewAgentModal.module.css'
 
 
 
-const NewAgentModal = ({closeModalNewAgent}) => {
-
-   
-
+const NewAgentModal = ({
+  clear, 
+  addNewAgent,
+  closeModalNewAgent,
+  agentFunction, takeAgentFunction,
+  takeName, name,
+  takeDescription, description,
+  takeStellDmg, stellDmg,
+  takePrimaryDmg, primaryDmg,
+  takeSecondaryDmg, secondaryDmg,
+  takeSpecialDmg, specialDmg}) => {
 
   return (
     <div className={styles.modalBack}>
@@ -14,32 +21,40 @@ const NewAgentModal = ({closeModalNewAgent}) => {
         <p>Adicionar Agente</p>
         <div className={`${styles.modalGrid}`}>
           <div>
-            <select>
-              <option selected disabled>Selecione</option>
-              <option>Duelista</option>
-              <option>Controlador</option>
-              <option>Iniciador</option>
-              <option>Sentinela</option>
+            <select id="agentFunction" name="agentFunction" value={agentFunction} onChange={takeAgentFunction}>
+              <option value="Selecione" selected disabled>Selecione</option>
+              <option value="Duelista">Duelista</option>
+              <option value="Controlador">Controlador</option>
+              <option value="Iniciador">Iniciador</option>
+              <option value="Sentinela">Sentinela</option>
             </select>
+            <input id="name" type="text" name="name"value={name} onChange={takeName} placeholder="Nome do Agente"/>
             <h3>Arma Branca:</h3>
             <h3>Arma Primaria:</h3>
             <h3>Arma Secundaria:</h3>
             <h3>Especial:</h3>
+            {agentFunction}<br/>
+            {name}<br/>
+            {description}<br/>
+            {stellDmg}<br/>
+            {primaryDmg}<br/>
+            {secondaryDmg}<br/>
+            {specialDmg}<br/>
           </div>
           <div>
             <div className={styles.inputValues}>
-              <input placeholder="Descricao"/>
-              <input placeholder="Dano da Arma Branca" />
-              <input placeholder="Dano da Arma Primaria" />
-              <input placeholder="Dano da Arma Secundaria" />
-              <input placeholder="Dano do Especial" />
+              <input id="description" type="text" name="description" value={description} onChange={takeDescription} placeholder="Descricao"/>
+              <input id="stellDmg" type="number" name="stellDmg" value={stellDmg} onChange={takeStellDmg}placeholder="Dano da Arma Branca" />
+              <input id="primaryDmg" type="number" name="primaryDmg" value={primaryDmg} onChange={takePrimaryDmg} placeholder="Dano da Arma Primaria" />
+              <input id="secondaryDmg" type="number" name="secondaryDmg" value={secondaryDmg} onChange={takeSecondaryDmg} placeholder="Dano da Arma Secundaria" />
+              <input id="specialDmg" type="number" name="specialDmg" value={specialDmg} onChange={takeSpecialDmg} placeholder="Dano do Especial" />
             </div>
           </div>
           <div>
             IMAGEM
             <div className={styles.buttons}>
-              <button onClick={closeModalNewAgent}>Cancelar</button>
-              <button onClick={() => closeModalNewAgent()}>Adicionar</button>
+              <button onClick={() => {closeModalNewAgent() ; clear()}}>Cancelar</button>
+              <button onClick={() => {addNewAgent() ; closeModalNewAgent() ; clear()}}>Adicionar</button>
             </div>
           </div>
         </div>

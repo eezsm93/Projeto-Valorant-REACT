@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './AgentList.module.css'
 import { Link, Route } from 'react-router-dom'
-import Data, { agents } from '../Data/Index'
+import Data, { agents, myData, myJson } from '../Data/Index'
 import {ReactComponent as VerTodos} from '../../Assets/images/caminho243.svg'
 import Modal from '../ModalAgents/Modal'
 import Input from '../Form/Input'
@@ -27,13 +27,15 @@ import NewAgentModal from '../ModalAgents/NewAgentModal'
     const [dmgValueFilter, setDmgValueFilter] = React.useState(null)
 
     const[newAgentModal, setNewAgentModal] = React.useState(false);
-    const[newAgentDescription, setNewAgentDescription] = React.useState(null);
+    const[agentFunction, setAgentFunction] = React.useState(null);
+    const [name, setName] = React.useState(null);
+    const [description, setDescription] = React.useState(null);
+    const [stellDmg, setStellDmg] = React.useState(null);
+    const [primaryDmg, setPrimaryDmg] = React.useState(null);
+    const [secondaryDmg, setSecondaryDmg] = React.useState(null);
+    const [specialDmg, setSpecialDmg] = React.useState(null);
 
 
-
-
-
- 
     function filterAgentsByName(event){
       var searchedName = event.target.value;
       if(searchedName.length > 0){
@@ -86,7 +88,6 @@ import NewAgentModal from '../ModalAgents/NewAgentModal'
       }
 
       let filteredAgents = agents.filter(function (agent) {
-        console.log(agent.skills[typeIndex].damage);
         if (aboveOrUnder) {
           return agent.skills[typeIndex].damage > dmgValueFilter;
         } else {
@@ -96,11 +97,53 @@ import NewAgentModal from '../ModalAgents/NewAgentModal'
       setAgentsList(filteredAgents);
     }
 
+    const takeAgentFunction = (e) => setAgentFunction(e.target.value)
+    const takeName = (e) => setName(e.target.value)
+    const takeDescription = (e) => setDescription(e.target.value)
+    const takeStellDmg = (e) => setStellDmg(Number(e.target.value))
+    const takePrimaryDmg = (e) => setPrimaryDmg(Number(e.target.value))
+    const takeSecondaryDmg = (e) => setSecondaryDmg(Number(e.target.value))
+    const takeSpecialDmg = (e) => setSpecialDmg(Number(e.target.value))
 
-    
 
     function addNewAgent(){
+      let newAgent = {
+        name: name,
+        function: agentFunction,
+        description: description,
+        skills: [
+          {
+            type: 1,
+            damage: stellDmg,
+          },
+          {
+            type: 2,
+            damage: primaryDmg,
+          },
+          {
+            type: 3,
+            damage: secondaryDmg,
+          },
+          {
+            type: 4,
+            damage: specialDmg,
+          },
+        ],
+        image: "cypher.png",
+      };
 
+      myData.data.agents.push(newAgent);
+      setAgentsList(myData.data.agents);
+    }
+
+    function clearModalNewAgent(){
+      setAgentFunction(null);
+      setName(null);
+      setDescription(null);
+      setStellDmg(null);
+      setPrimaryDmg(null);
+      setSecondaryDmg(null);
+      setSpecialDmg(null);
     }
 
 
@@ -110,10 +153,7 @@ import NewAgentModal from '../ModalAgents/NewAgentModal'
       agents.splice(i,1)
   }
 
-
-
-
-
+    
 
     return(
     <>
@@ -135,7 +175,19 @@ import NewAgentModal from '../ModalAgents/NewAgentModal'
         <VerTodos/><p>ver todos</p>
         </div></Link>}
         {agentModal && (<Modal closeModal={() => setAgentModal(null)} selectedAgent={agentModal} removeAgent={removeAgent}/>)}
-        {location === '/agents' && newAgentModal && <NewAgentModal closeModalNewAgent={() => setNewAgentModal(false)}/>}
+        {location === '/agents' && newAgentModal &&
+         <NewAgentModal
+        clear={clearModalNewAgent}
+        addNewAgent={addNewAgent}
+        closeModalNewAgent={() => setNewAgentModal(false)}
+        agentFunction={agentFunction} takeAgentFunction={takeAgentFunction}
+        name={name} takeName={takeName}
+        description={description} takeDescription={takeDescription}
+        stellDmg={stellDmg} takeStellDmg={takeStellDmg}
+        primaryDmg={primaryDmg} takePrimaryDmg={takePrimaryDmg}
+        secondaryDmg={secondaryDmg} takeSecondaryDmg={takeSecondaryDmg}
+        specialDmg={specialDmg} takeSpecialDmg={takeSpecialDmg}
+        />}
       </div> 
     </>
     )

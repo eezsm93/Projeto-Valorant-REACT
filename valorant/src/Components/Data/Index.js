@@ -2,14 +2,15 @@ import React from 'react'
 
 
 
-var myJson = `{
+export var myJson = `{
+
     "data": {
       "agents": [
         {
           "name": "Jett",
           "function": "Duelista",
           "description": "Devonshire rex. Devonshire rex birman but sphynx savannah panther lynx british shorthair. Tiger. Burmese british shorthair savannah but ocicat siamese for norwegian forest. American shorthair cornish rex american bobtail puma sphynx. Tabby munchkin savannah turkish angora, siamese yet tabby. Siberian grimalkin, birman so lynx but abyssinian tomcat. Ocicat scottish fold but devonshire rex.",
-          "skills": [
+           "skills": [
             {
               "type": 1,
               "damage": 5
@@ -281,18 +282,18 @@ var myJson = `{
           "gun12.png"
         ],
         "secondaryGun": [
-          "./guns/gun14.png",
-          "./guns/gun15.png",
-          "./guns/gun13.png",
-          "./guns/gun9.png",
-          "./guns/gun10.png"
+          "gun14.png",
+          "gun15.png",
+          "gun13.png",
+          "gun9.png",
+          "gun10.png"
         ],
         "steel": [
-          "./guns/gun1.png",
-          "./guns/gun2.png",
-          "./guns/gun3.png",
-          "./guns/gun4.png",
-          "./guns/gun5.png"
+          "gun1.png",
+          "gun2.png",
+          "gun3.png",
+          "gun4.png",
+          "gun5.png"
         ]
       },
       "maps": [
@@ -308,10 +309,8 @@ var myJson = `{
 //FIM DO JSON
 
 
-var myData = JSON.parse(myJson);
 
-
-
+export var myData = JSON.parse(myJson);
 export let agents = myData.data.agents;
 export let maps = myData.data.maps;
 export let guns = myData.data.guns;
