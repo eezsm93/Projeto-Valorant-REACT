@@ -1,7 +1,7 @@
 import React from "react";
 import Img from "../../Assets/images/V_AGENTS_587x900_Cypher.png";
 import styles from "./Guns.module.css";
-import Data, { guns, agents, maps } from "../Data/Index";
+import { guns } from "../Data/Index";
 import { ReactComponent as ArrowLeft } from "../../Assets/images/arrowLeft.svg";
 import { ReactComponent as ArrowRight } from "../../Assets/images/arrowRight.svg";
 import { ReactComponent as Target } from "../../Assets/images/target.svg";
@@ -20,7 +20,7 @@ const Guns = () => {
             <ArrowLeft />
             {guns.primaryGun.map((gun, index) => (
               <div key={index}>
-                <img src={require(`../../Assets/guns/${gun}`)} />
+                <img alt="armas primarias" src={require(`../../Assets/guns/${gun}`)} />
               </div>
             ))}
             <ArrowRight />
@@ -30,7 +30,7 @@ const Guns = () => {
             <ArrowLeft />
             {guns.secondaryGun.map((gun, index) => (
               <div key={index}>
-                <img src={require(`../../Assets/guns/${gun}`)} />
+                <img alt="armas secondarias" src={require(`../../Assets/guns/${gun}`)} />
               </div>
             ))}
             <ArrowRight />
@@ -40,7 +40,7 @@ const Guns = () => {
             <ArrowLeft />
             {guns.steel.map((gun, index) => (
               <div key={index}>
-                <img src={require(`../../Assets/guns/${gun}`)} />
+                <img alt="armas brancas" src={require(`../../Assets/guns/${gun}`)} />
               </div>
             ))}
             <ArrowRight/>

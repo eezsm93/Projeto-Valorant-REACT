@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './AgentList.module.css'
 import { Link, Route } from 'react-router-dom'
-import Data, { agents, myData, myJson } from '../Data/Index'
+import { agents, myData} from '../Data/Index'
 import {ReactComponent as VerTodos} from '../../Assets/images/caminho243.svg'
 import Modal from '../ModalAgents/Modal'
 import Input from '../Form/Input'
@@ -167,7 +167,7 @@ import NewAgentModal from '../ModalAgents/NewAgentModal'
         </div>}
         {agentsList.map((agent,index) => (
             <div onClick={() => { setAgentModal(agent); setAgentIndex(index)}} key={index} className={`${styles.agentCard} `}>
-              <img className={styles.agentImg} src={require(`../../Assets/agents/${agent.image}`)}/>
+              <img alt="agentes" className={styles.agentImg} src={require(`../../Assets/agents/${agent.image}`)}/>
               <p>{agent.name.toUpperCase()}</p>
             </div>
         ))} 
@@ -177,17 +177,17 @@ import NewAgentModal from '../ModalAgents/NewAgentModal'
         {agentModal && (<Modal closeModal={() => setAgentModal(null)} selectedAgent={agentModal} removeAgent={removeAgent}/>)}
         {location === '/agents' && newAgentModal &&
          <NewAgentModal
-        clear={clearModalNewAgent}
-        addNewAgent={addNewAgent}
-        closeModalNewAgent={() => setNewAgentModal(false)}
-        agentFunction={agentFunction} takeAgentFunction={takeAgentFunction}
-        name={name} takeName={takeName}
-        description={description} takeDescription={takeDescription}
-        stellDmg={stellDmg} takeStellDmg={takeStellDmg}
-        primaryDmg={primaryDmg} takePrimaryDmg={takePrimaryDmg}
-        secondaryDmg={secondaryDmg} takeSecondaryDmg={takeSecondaryDmg}
-        specialDmg={specialDmg} takeSpecialDmg={takeSpecialDmg}
-        />}
+            clear={clearModalNewAgent}
+            addNewAgent={addNewAgent}
+            closeModalNewAgent={() => setNewAgentModal(false)}
+            agentFunction={agentFunction} takeAgentFunction={takeAgentFunction}
+            name={name} takeName={takeName}
+            description={description} takeDescription={takeDescription}
+            stellDmg={stellDmg} takeStellDmg={takeStellDmg}
+            primaryDmg={primaryDmg} takePrimaryDmg={takePrimaryDmg}
+            secondaryDmg={secondaryDmg} takeSecondaryDmg={takeSecondaryDmg}
+            specialDmg={specialDmg} takeSpecialDmg={takeSpecialDmg}
+          />}
       </div> 
     </>
     )
