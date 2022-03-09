@@ -66,3 +66,9 @@
     width: 325px;
     border: 2px solid red;
 }
+.arrowLeft{
+    cursor: pointer;
+}
+.arrowRight{
+    cursor: pointer;
+}

@@ -17,33 +17,33 @@ const Guns = () => {
           </div>
           <p>Arma Primaria</p>
           <div className={styles.primaryGunsContainer}>
-            <ArrowLeft />
+            <ArrowLeft className={styles.arrowLeft}/>
             {guns.primaryGun.map((gun, index) => (
               <div key={index}>
                 <img alt="armas primarias" src={require(`../../Assets/guns/${gun}`)} />
               </div>
             ))}
-            <ArrowRight />
+            <ArrowRight className={styles.arrowRight} />
           </div>
           <p>Arma Secundaria</p>
           <div className={styles.secondaryGunsContainer}>
-            <ArrowLeft />
+            <ArrowLeft className={styles.arrowLeft} />
             {guns.secondaryGun.map((gun, index) => (
               <div key={index}>
                 <img alt="armas secondarias" src={require(`../../Assets/guns/${gun}`)} />
               </div>
             ))}
-            <ArrowRight />
+            <ArrowRight className={styles.arrowRight} />
           </div>
           <p>Arma Branca</p>
           <div className={styles.steelGunsContainer}>
-            <ArrowLeft />
+            <ArrowLeft className={styles.arrowLeft} />
             {guns.steel.map((gun, index) => (
               <div key={index}>
                 <img alt="armas brancas" src={require(`../../Assets/guns/${gun}`)} />
               </div>
             ))}
-            <ArrowRight/>
+            <ArrowRight className={styles.arrowRight}/>
           </div>
         </div>
         <div>
